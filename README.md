@@ -35,6 +35,12 @@ Now run this command:
     rm -rf ~/.cache/nvim
     rm -rf ~/.local/share/nvim
 
+If you have the command trahs you should use:
+
+    trash  ~/.config/nvim
+    trash ~/.cache/nvim
+    trash ~/.local/share/nvim
+
 Clone this repo:
 
     git clone --depth=1 https://github.com/voyeg3r/nvim.git ~/.config/nvim
