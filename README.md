@@ -36,7 +36,7 @@ Now run this command:
 
 Clone this repo:
 
-    https://github.com/voyeg3r/nvim.git ~/.config/nvim
+    git clone --depth=1 https://github.com/voyeg3r/nvim.git ~/.config/nvim
 
 Run the following command to install all plugins so its settings will work:
 
