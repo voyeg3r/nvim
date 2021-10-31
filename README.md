@@ -61,5 +61,8 @@ the colorizer plugin but you can just run:
 
     :ColorizerToggle
 
+The 'telescope' Ctrl-p shortcut will start searching from ~/.config
+you can change this behavior at: ~/.config/nvim/lua/mappings.lua
+
 
 
