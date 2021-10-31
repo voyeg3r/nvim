@@ -25,7 +25,7 @@ Modular neovim configuration
      │   └── utils.lua
      └── README.md  (this file)
 
-Befor install this settings backup your currnt config:
+Before install this settings backup your currnt config:
 
     cp ~/.config/nvim{,-backup}
 
@@ -43,6 +43,23 @@ Run the following command to install all plugins so its settings will work:
 
     nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
+To see all mappings you can use the_silver_searcher
+
+     ag '^map\('
+
+Normal mappings are something like:
+
+    map('n')
+
+Insert mappings:
+
+    map('i')
+
+OBS: In my simple-terminal the shortcut Ctrl-alt-c
+does not work, in our case it would be used to toggle
+the colorizer plugin but you can just run:
+
+    :ColorizerToggle
 
 
 
