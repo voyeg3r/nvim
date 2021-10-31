@@ -20,6 +20,7 @@ __pycache__
 [._]s[a-w][a-z]
 *.un~
 tags
+sessions
 bin/login-with-age.sh
 bin/youtube-dl
 nvim/plugged
