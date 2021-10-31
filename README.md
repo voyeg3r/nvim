@@ -61,6 +61,39 @@ the colorizer plugin but you can just run:
 
     :ColorizerToggle
 
+## Most important mappings we have in the mappings.lua file:
+
+    F2 ..................... toggles NvimTree (NvimTreeToggle)
+    F5 ..................... restore last auto saved session (opened files)
+    F6 ..................... (native) mapping to jump to the alternate file ':h alternate'
+    F9 ..................... save the file (both normal and insert mode)
+    Ctrl-p ................. fuzzy file finder with 'telescope'
+    Ctrl-d ................. in normal mode scrolls half screen, in insert mode deindent
+    Ctrl-u ................. in normal mode scrolls half screen backward
+    <leader>v .............. opens $MYVIMRC
+    <leader>x .............. :wsh | up | bd!<CR>    (save shada, save if has changes, delete buffer)
+    <leader>p .............. select last pasted text
+    <leader>d .............. squeeze blank lines (duplicated blank lines become just one)
+    <leader>o .............. 'telescope' open recenf files
+    <leader>b .............. list and choose opened buffers
+    ç ...................... :  (start command mode)
+    Ctrl-l ................. toggles highlight search
+
+## Easy motion:
+
+    Each 'j' or 'k' with a count, like 7j or 15k will be added to the jumplist, so you can
+    get back to the previous cursor position easily. The mapping responsible for this is:
+
+    map('n', 'j', [[v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj']], {expr = true})
+    map('n', 'k', [[v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk']], {expr = true})
+
+    Each 'n', 'N', Ctrl-o, Ctrl-i in normal mode also will put the cursor at the vertical middle of the screen
+
+## Easy selection:
+
+    To select the current line just press in normal mode: "vil"
+    the mnemonic for this is: "visual inner line"
+
 
 
 
