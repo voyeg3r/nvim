@@ -1,28 +1,29 @@
 Modular neovim configuration
 
-    ├── init.lua    ............... main config file
-    ├── lua         ............... folder with all config files
-    │   ├── autocmd.lua
-    │   ├── mappings.lua
-    │   ├── plugins
-    │   │   ├── config
-    │   │   │   ├── autopairs.lua
-    │   │   │   ├── blankline.lua
-    │   │   │   ├── buftabline.lua
-    │   │   │   ├── cmp.lua
-    │   │   │   ├── cmp.lua-backup
-    │   │   │   ├── cmp.lua-backup2
-    │   │   │   ├── lspconfig.lua
-    │   │   │   ├── lspinstall.lua
-    │   │   │   ├── lspkind_icons.lua
-    │   │   │   ├── lspkind.lua
-    │   │   │   ├── others.lua
-    │   │   │   ├── securemodelines.lua
-    │   │   │   └── telescope.lua
-    │   │   └── init.lua
-    │   ├── settings.lua
-    │   └── utils.lua
-    └── README.md  (this file)
+    nvim
+     ├── init.lua    ............... main config file
+     ├── lua         ............... folder with all config files
+     │   ├── autocmd.lua
+     │   ├── mappings.lua
+     │   ├── plugins
+     │   │   ├── config
+     │   │   │   ├── autopairs.lua
+     │   │   │   ├── blankline.lua
+     │   │   │   ├── buftabline.lua
+     │   │   │   ├── cmp.lua
+     │   │   │   ├── cmp.lua-backup
+     │   │   │   ├── cmp.lua-backup2
+     │   │   │   ├── lspconfig.lua
+     │   │   │   ├── lspinstall.lua
+     │   │   │   ├── lspkind_icons.lua
+     │   │   │   ├── lspkind.lua
+     │   │   │   ├── others.lua
+     │   │   │   ├── securemodelines.lua
+     │   │   │   └── telescope.lua
+     │   │   └── init.lua
+     │   ├── settings.lua
+     │   └── utils.lua
+     └── README.md  (this file)
 
 Befor install this settings backup your currnt config:
 
