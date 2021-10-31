@@ -45,19 +45,21 @@ Run the following command to install all plugins so its settings will work:
 
 To see all mappings you can use the_silver_searcher
 
-     ag '^map\('
+     ag '^map\(' .
 
 Normal mappings are something like:
 
-    map('n')
+    map('n' ...)
 
 Insert mappings:
 
-    map('i')
+    map('i' ...)
 
 OBS: In my simple-terminal the shortcut Ctrl-alt-c
 does not work, in our case it would be used to toggle
 the colorizer plugin but you can just run:
+
+Another thing: The "<leader>" key, see ':h leader' is set to ','
 
     :ColorizerToggle
 
