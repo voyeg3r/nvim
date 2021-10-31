@@ -13,6 +13,7 @@ map('n', '<leader>w', ':bw!<cr>', {silent = true})
 
 -- salvar com <F9>
 map('n', '<F9>', '<cmd>update<cr>')
+map('i', '<F9>', '<c-o>:update<cr>')
 
 map('n', '<leader>p', "'`[' . strpart(getregtype(), 0, 1) . '`]'" , {expr = true})
 
