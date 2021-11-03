@@ -8,6 +8,9 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
 end
 
+
+--require('impatient') -- at first comment this line
+
 require('packer').startup({
     function(use)
     use('wbthomason/packer.nvim')
@@ -28,7 +31,8 @@ require('packer').startup({
     --     opt = true,
     --     after = 'nvim-cmp',
         -- config = function() require'lsp'.setup() end
-        config = function() require'plugins.config.lspconfig' end
+        -- config = function() require'plugins.config.lspconfig' end
+           config = [[require('plugins.config.lspconfig')]]
     })
     use('onsails/lspkind-nvim')
     use {
@@ -58,35 +62,35 @@ require('packer').startup({
 
     use {
         'hrsh7th/nvim-cmp',
-        after = "friendly-snippets",
+        --after = "friendly-snippets",
         config = function()
             require'plugins.config.cmp'
         end
     }
     use {
         'hrsh7th/cmp-nvim-lsp',
-        after = "cmp_luasnip"
+        --after = "cmp_luasnip"
     }
     use {
         'hrsh7th/cmp-buffer',
-        after = "cmp-nvim-lsp"
+        --after = "cmp-nvim-lsp"
     }
     use {
         "hrsh7th/cmp-path",
-        after = "cmp-buffer",
+        --after = "cmp-buffer",
     }
     use 'hrsh7th/cmp-cmdline'
     use {
         'L3MON4D3/LuaSnip',
         -- after = "nvim-cmp",
         wants = "friendly-snippets",
-        -- config = function()
-        --     require'plugins.config.cmp'
-        -- end
+        config = function()
+            require'plugins.config.cmp'
+        end
     }
     use {
         'saadparwaiz1/cmp_luasnip',
-         after = "LuaSnip"
+         --after = "LuaSnip"
     }
 
     -- these plugins are all realted to editor configs
@@ -98,6 +102,11 @@ require('packer').startup({
             end
         }
     use 'kevinhwang91/nvim-bqf' -- Enhanced quickfix
+    -- use {'danilamihailov/beacon.nvim',
+    --     config = function()
+    --        vim.cmd 'g:beacon_ignore_filetypes = ['fzf']'
+    --     end
+    -- }
     use {'karb94/neoscroll.nvim',
             --opt = true,
             config = function()
@@ -118,18 +127,19 @@ require('packer').startup({
             end
     })
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-    use ({"lukas-reineke/indent-blankline.nvim",
-        require("indent_blankline").setup {
-            char = "▏",
-            buftype_exclude = { "nofile", "terminal"},
-            filetype_exclude = { "help", "alpha", "packer", "lspinfo", "markdown",
-                                "TelescopePrompt",
-                                "TelescopeResults",
-                            },
-            show_trailing_blankline_indent = false,
-            show_first_indent_level = false,
-        }
-    })
+    -- use {'nvim-telescope/telescope-fzy-native.nvim'}
+    --use ({"lukas-reineke/indent-blankline.nvim",
+    --    require("indent_blankline").setup {
+    --        char = "▏",
+    --        buftype_exclude = { "nofile", "terminal"},
+    --        filetype_exclude = { "help", "alpha", "packer", "lspinfo", "markdown",
+    --                            "TelescopePrompt",
+    --                            "TelescopeResults",
+    --                        },
+    --        show_trailing_blankline_indent = false,
+    --        show_first_indent_level = false,
+    --    }
+    --})
     use({
             "folke/persistence.nvim",
             event = "BufReadPre", -- this will only start session saving when an actual file was opened
@@ -152,10 +162,9 @@ require('packer').startup({
         'NvimTreeToggle',
         }
     }
-    -- use "windwp/nvim-autopairs"
     use {
         'windwp/nvim-autopairs',
-        after = 'nvim-cmp',
+        --after = 'nvim-cmp',
         config = [[require('plugins.config.autopairs')]]
     }
     use({
@@ -172,7 +181,10 @@ require('packer').startup({
     -- }}}
 
     -- these add in a bit more bling and flair to nvim
-    use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
+    use({ 'nvim-treesitter/nvim-treesitter',
+        branch = '0.5-compat',
+        run = ':TSUpdate',
+    })
     -- popular themes incoming
     use {'folke/tokyonight.nvim',
       -- opt = true,

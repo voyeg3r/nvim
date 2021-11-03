@@ -61,7 +61,7 @@ opt.wildmode = {"full", "list", "full"}
 opt.cmdheight = 1 -- Height of the command bar
 opt.inccommand = 'nosplit'
 opt.showmode = false
-opt.timeoutlen = 500
+opt.timeoutlen = 300
 
 -- command menu settings
 opt.pumheight = 10
@@ -93,7 +93,7 @@ vim.wo.relativenumber = true
 vim.wo.wrap = true
 vim.wo.linebreak = true
 vim.wo.cursorline = false
-vim.wo.foldenable = true
+vim.wo.foldenable = false
 vim.bo.expandtab = true
 vim.opt.shiftround = true
 vim.bo.expandtab = true

@@ -35,6 +35,7 @@ map('x' , '>', '>gv')
 map('x' , '<', '<gv')
 
 map('n', '<leader>v', '<cmd>e $MYVIMRC<cr>')
+map('n', '<leader>ss', ':PackerSync<cr>')
 map('n', 'Y', 'y$')
 map('n', '<F2>', '<cmd>NvimTreeToggle<CR>')
 map('n', '<C-l>', [[ (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n" <BAR> redraw<CR>]], {silent = true, expr = true} )
@@ -67,10 +68,15 @@ map('v', '<A-k>', ':m \'<-2<CR>gv=gv')
 
 map('n', '<leader>d', '<cmd>lua require("utils").squeeze_blank_lines()<cr>')
 
+-- https://www.reddit.com/r/neovim/comments/qa4klf
+map('n', '<LeftMouse>', '<LeftMouse><cmd>lua vim.lsp.buf.hover({border = "single"})<CR>', { noremap=true, silent=true })
+map('n', '<RightMouse>', '<LeftMouse><cmd>lua vim.lsp.buf.definition()<CR>', { noremap=true, silent=true })
+
 -- telescope mappings
 map('n', '<leader>o', ':lua require("telescope.builtin").oldfiles()<cr>')
 -- cd ~/.dotfiles/wiki | Telescope find_files
-map('n', '<c-p>', [[<cmd>lua require("telescope.builtin").find_files{}<cr>]], {silent = true})
+map('n', '<c-p>', [[<cmd>lua require("telescope.builtin").find_files{cwd = "~/.dotfiles"}<cr>]], {silent = true})
+map('n', '<F8>', [[<cmd>lua require("telescope.builtin").find_files{cwd = "~/.config"}<cr>]], {silent = true})
 -- map('n', '<F8>', [[<cmd>lua require("telescope.builtin").find_files{cwd = "~/.config/nvim"}<cr>]], {silent = true})
 map('n', '<leader>f', [[<cmd>lua require('telescope.builtin').find_files()<cr>]], { silent = true})
 map('n', '<leader>b', [[<cmd>lua require('telescope.builtin').buffers()<cr>]], {  silent = true})

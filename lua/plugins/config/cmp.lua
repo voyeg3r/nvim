@@ -80,7 +80,7 @@ cmp.setup({
         emoji = "[E]",
         path = "[F]",
         calc = "[C]",
-        vsnip = "[S]",
+        luasnip = "[S]",
         buffer = "[B]",
       })[entry.source.name]
       vim_item.dup = ({
@@ -96,10 +96,11 @@ cmp.setup({
   sources = {
     { name = "nvim_lsp" },
     { name = "luasnip" },
+    { name = "path" },
     { name = "nvim_lua" },
+    { name = "cmdline"},
     { name = "emoji" },
     { name = "calc" },
-    { name = "path" },
     { name = "latex_symbols" },
     {
       name = "buffer",
