@@ -1,6 +1,5 @@
 #!/bin/env bash
 
-
 repo='https://github.com/wbthomason/packer.nvim'
 packpath='$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim'
 
@@ -22,5 +21,4 @@ ln -sfvn ~/.config/nvim/packpath ~/.local/share/nvim
 [ ! -f "$packpath" ] 2>/dev/null && git clone --depth 1 "$repo" "$packpath"
 
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-
 

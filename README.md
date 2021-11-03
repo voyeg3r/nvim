@@ -38,30 +38,8 @@ Modular neovim configuration
         │   └── packer_compiled.lua
         └──── README.md        --> this file
 
-
-Shell script install function (copy and paste it into your terminal):
-
-    dotfetch(){
-        # install packer
-        repo='https://github.com/wbthomason/packer.nvim'
-        packpath='$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim'
-        # backup your old ~/.config/nvim - If you run it multiple times it
-        # will not mess up ane of your previous configs. the backup is
-        # nvim-backup-Year-month-day-hour-minute-second
-        mv -f ~/.config/nvim{,-backup-$(date +"%Y%m%d_%H%M%S")}
-        \rm -rf ~/.config/nvim
-        \rm -rf ~/.cache/nvim
-        \rm -rf ~/.local/share/nvim
-        git clone --depth=1 https://github.com/voyeg3r/nvim.git ~/.config/nvim
-        ln -sfvn ~/.config/nvim/packpath ~/.local/share/nvim
-
-        ln -sfvn ~/.config/nvim/packpath ~/.local/share/nvim
-
-        [ ! -f "$packpath" ] 2>/dev/null && git clone --depth 1 "$repo" "$packpath"
-
-        nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-    } && dotfetch
-
+## Instalation
+To install just run the install.sh (Read the script to make sure what you are doing)
 
 After cloning the repo you must run:
 
