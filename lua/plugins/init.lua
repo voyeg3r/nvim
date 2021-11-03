@@ -80,6 +80,12 @@ require('packer').startup({
         --after = "cmp-buffer",
     }
     use 'hrsh7th/cmp-cmdline'
+    require'cmp'.setup.cmdline(':', {
+          sources = {
+                  { name = 'cmdline' }
+                    }
+                })
+
     use {
         'L3MON4D3/LuaSnip',
         -- after = "nvim-cmp",
