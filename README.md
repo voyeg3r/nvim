@@ -38,28 +38,17 @@ Modular neovim configuration
         │   └── packer_compiled.lua
         └──── README.md        --> this file
 
-Before install this settings backup your currnt config:
 
-    cp ~/.config/nvim{,-backup}
-
-Now run this command:
-
-    rm -rf ~/.config/nvim
-    rm -rf ~/.cache/nvim
-    rm -rf ~/.local/share/nvim
-
-If you have the command trahs you should use:
-
-    trash  ~/.config/nvim
-    trash ~/.cache/nvim
-    trash ~/.local/share/nvim
-
-Clone this repo:
+Shell script install function (copy and paste it into your terminal):
 
     dotfetch(){
+        # install packer
         repo='https://github.com/wbthomason/packer.nvim'
         packpath='$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim'
-        mv -f ~/.config/nvim{,-backup}
+        # backup your old ~/.config/nvim - If you run it multiple times it
+        # will not mess up ane of your previous configs. the backup is
+        # nvim-backup-Year-month-day-hour-minute-second
+        mv -f ~/.config/nvim{,-backup-$(date +"%Y%m%d_%H%M%S")}
         \rm -rf ~/.config/nvim
         \rm -rf ~/.cache/nvim
         \rm -rf ~/.local/share/nvim
