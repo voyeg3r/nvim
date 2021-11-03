@@ -38,14 +38,14 @@ Modular neovim configuration
         │   └── packer_compiled.lua
         └──── README.md        --> this file
 
-## Instalation
+### Instalation
 To install just run the install.sh (Read the script to make sure what you are doing)
 
 After cloning the repo you must run:
 
     :PackerSync
 
-## Read about Language Servers in ordeer to install the servers that will help you coding better:
+### Read about Language Servers in ordeer to install the servers that will help you coding better:
 + https://raygervais.dev/articles/2021/3/neovim-lsp/
 + https://ka.codes/posts/nvim-lspinstall
 
@@ -61,11 +61,11 @@ If by any chance nvim complains about not having packer just run:
 
      :PackerSync
 
-## Copy error mesages to the clipboard:
+### Copy error mesages to the clipboard:
 
     :let @+=execute('messages')
 
-## To see all mappings you can use the_silver_searcher
+### To see all mappings you can use the_silver_searcher
 
      ag '^map\(' .
 
@@ -87,7 +87,7 @@ Another thing: The "<leader>" key, see ':h leader' is set to ','
 
     :ColorizerToggle
 
-## Most important mappings we have in the mappings.lua file:
+### Most important mappings we have in the mappings.lua file:
 
     F2 ..................... toggles NvimTree (NvimTreeToggle)
     F5 ..................... restore last auto saved session (opened files)
@@ -111,11 +111,11 @@ Another thing: The "<leader>" key, see ':h leader' is set to ','
     Ctrl-[ ................  another easy way to leave insert mode
     gf ....................  another default mapping to open the file under the cursor
 
-## Tips about NvimTree:
+### Tips about NvimTree:
 
 When you open the NvimTree with F2, you can press 'g?' to toggle the builtin help for the plugin.
 
-## Easy motion:
+### Easy motion:
 
 Each 'j' or 'k' with a count, like 7j or 15k will be added to the jumplist, so you can
 get back to the previous cursor position easily. The mapping responsible for this is:
@@ -125,7 +125,7 @@ get back to the previous cursor position easily. The mapping responsible for thi
 
 Each 'n', 'N', Ctrl-o, Ctrl-i in normal mode also will put the cursor at the vertical middle of the screen
 
-## Easy selection:
+### Easy selection:
 
     To select the current line just press in normal mode: "vil"
     the mnemonic for this is: "visual inner line"
