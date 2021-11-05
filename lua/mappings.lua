@@ -5,8 +5,19 @@ local function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+-- -- https://vonheikemen.github.io/devlog/tools/configuring-neovim-using-lua/
+-- set wildcharm=<C-z>
+-- map('c', '<tab>', [[getcmdtype() =~ '[\/?]' ? "<C-f>A<C-n>" : "<C-z>"]], { expr = true})
+-- map('c',  '/' , '/<tab>')
+
 map('n', '<leader>x', ':wsh | up | bd!<cr>', {silent = true})
 map('n', '<leader>w', ':bw!<cr>', {silent = true})
+-- map('n', '<leader>t', ':TSBufEnable<cr>')
+
+-- -- harpoon mappings
+-- -- https://github.com/ThePrimeagen/harpoon
+-- map('n', '<leader>a', '<cmd>lua require("harpoon.mark").add_file()<cr>')
+-- map('n', '<leader>h', '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>')
 
 -- Reload config
 -- map('n', '<c-m-r>', '<Cmd>lua ReloadConfig()<CR>')
@@ -15,7 +26,7 @@ map('n', '<leader>w', ':bw!<cr>', {silent = true})
 map('n', '<F9>', '<cmd>update<cr>')
 map('i', '<F9>', '<c-o>:update<cr>')
 
-map('n', '<leader>p', "'`[' . strpart(getregtype(), 0, 1) . '`]'" , {expr = true})
+-- map('n', '<leader>p', "'`[' . strpart(getregtype(), 0, 1) . '`]'" , {expr = true})
 
 -- It adds motions like 25j and 30k to the jump list, so you can cycle
 -- through them with control-o and control-i.
@@ -25,8 +36,8 @@ map('n', 'k', [[v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk']], {e
 
 map('n', 'n', 'nzz')
 map('n', 'N', 'Nzz')
-map('n', '<c-o>', '<c-o>zz')
-map('n', '<c-i>', '<c-i>zz')
+map('n', '<c-o>', '<c-o>zz:lua require("utils").flash_cursorline()<cr>', { silent = true})
+map('n', '<c-i>', '<c-i>zz:lua require("utils").flash_cursorline()<cr>', { silent = true})
 map('n', '}', '}zz')
 map('n', '{', '{zz')
 
@@ -43,6 +54,7 @@ map('n', '<C-l>', [[ (&hls && v:hlsearch ? ':nohls' : ':set hls')."\n" <BAR> red
 -- shortcuts to jump in the command line
 map('c', '<C-a>', '<home>')
 map('c', '<C-e>', '<end>')
+-- map('c', '/', '/<tab>')
 
 map('i', '<s-<cr>', '<c-o>o')
 map('i', '<c-<cr>', '<c-o>O')
@@ -75,7 +87,7 @@ map('n', '<RightMouse>', '<LeftMouse><cmd>lua vim.lsp.buf.definition()<CR>', { n
 -- telescope mappings
 map('n', '<leader>o', ':lua require("telescope.builtin").oldfiles()<cr>')
 -- cd ~/.dotfiles/wiki | Telescope find_files
-map('n', '<c-p>', [[<cmd>lua require("telescope.builtin").find_files{cwd = "~/.dotfiles"}<cr>]], {silent = true})
+map('n', '<c-p>', [[<cmd>lua require("telescope.builtin").find_files{hidden = true, cwd = "~/.dotfiles"}<cr>]], {silent = true})
 map('n', '<F8>', [[<cmd>lua require("telescope.builtin").find_files{cwd = "~/.config"}<cr>]], {silent = true})
 -- map('n', '<F8>', [[<cmd>lua require("telescope.builtin").find_files{cwd = "~/.config/nvim"}<cr>]], {silent = true})
 map('n', '<leader>f', [[<cmd>lua require('telescope.builtin').find_files()<cr>]], { silent = true})

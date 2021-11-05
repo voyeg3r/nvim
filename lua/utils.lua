@@ -10,13 +10,24 @@ local api = vim.api  -- access vim api
 
 local M = {}
 
+-- https://vi.stackexchange.com/questions/31206
 M.flash_cursorline = function()
+    vim.opt.cursorline = true
     vim.cmd([[hi CursorLine guifg=#000000 guibg=#ffffff]])
     vim.fn.timer_start(200, function()
-    vim.cmd([[hi CursorLine guifg=NONE guibg=NONE]])
+        vim.cmd([[hi CursorLine guifg=NONE guibg=NONE]])
+        vim.opt.cursorline = false
     end)
 end
 
+-- M.flash_cursorline = function()
+--    vim.opt.cursorline = true
+--    vim.fn.timer_start(200, function()
+--         vim.opt.cursorline = false
+--     end)
+--     vim.opt.cursorline = false
+-- end
+--
 M.squeeze_blank_lines = function()
     -- references: https://vi.stackexchange.com/posts/26304/revisions
     local old_query = vim.fn.getreg('/')    -- save search register
@@ -65,7 +76,7 @@ end
 M.changeheader = function()
     if (vim.fn.line('$') >= 7) then
         time = os.date("%a, %d %b %Y %H:%M")
-        preserve('sil! keepp keepj 1,7s/\\vlast (modified|change):\\zs.*/ ' .. time .. '/ei')
+        M.preserve('sil! keepp keepj 1,7s/\\vlast (modified|change):\\zs.*/ ' .. time .. '/ei')
     end
 end
 
