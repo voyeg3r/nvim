@@ -1,0 +1,43 @@
+---
+File: ~/.config/nvim/TODO
+Last Change: Tue, Jan 2024/01/30 - 19:46:40
+tags: [todo, nvim]
+---
+
+# What is missing on my configuration
+
+- [ ] Text-objects for markdown code
+- [ ] Dynamic templates with luasnip
+- [ ] Hide indent blank line for help files
+- [x] fixed dynamic snippets update
+- [x] solved paste in insert leader p
+- [x] choice nodes working (luasnip)
+- [ ] [look at this](https://github.com/BozeBro/my-nvim-config)
+- [ ] [lazy recipes](https://www.lazyvim.org/configuration/recipes)
+- [ ] [linuxdabller dotfiles](https://gitlab.com/linuxdabbler/dotfiles)
+- [x] [5 smart mini snips](https://medium.com/scoro-engineering/5-smart-mini-snippets-for-making-text-editing-more-fun-in-neovim-b55ffb96325a)
+- [ ] [nice config](https://github.com/Traap/lazy.zero)
+- [ ] [another config](https://github.com/SamuelBorn/dotfiles/tree/main/nvim)
+- [ ] [lazy more didatic](https://www.josean.com/posts/nvim-treesitter-and-textobjects)
+- [x] [chris machine launch nvim](https://github.com/LunarVim/Launch.nvim)
+- [ ] [lots of config files](https://dotfyle.com/neovim/configurations/top)
+- [ ] [Neovim discussion on github](https://github.com/neovim/neovim/discussions)
+- [ ] [Nvim modular stater kit](https://github.com/bcampolo/nvim-starter-kit/tree/main)
+- [ ] [discussions on github](https://github.com/neovim/neovim/discussions/27085)
+- [ ] [New config to study](https://youtu.be/oo_I5lAmdi0?si=Th8xhjDBki-HaCCM)
+- [ ] [nightly config](https://github.com/ofseed/nvim)
+- [ ] [New neovim distro](https://github.com/sontungexpt/stinvim)
+- [ ] [less than 50 changes](https://github.com/JackDerksen/viis-lazyvim)
+- [ ] define makeprg for luafiles
+- [ ] [neovim pde](https://github.com/abeldekat/nvim_pde)
+- [ ] [New settings](https://github.com/2kabhishek/nvim2k)
+
+inoreab _hand 👋
+
+https://github.com/filipdutescu/renamer.nvim
+https://github.com/nanotee/nvim-lua-guide#luacheck notes on luacheck
+
+lua print(vim.api.nvim_buf_get_name(0))
+
+função para pular para buffer alternativo apenas se já aberto
+https://github.com/3rd/config/blob/master/home/dotfiles/nvim/lua/modules/workflow/buffer.lua#L77

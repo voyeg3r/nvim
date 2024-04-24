@@ -1,0 +1,8 @@
+# ~/.config/nvim/stylua.toml
+# Last Change: Thu, Apr 2024/04/18 - 12:16:31
+
+indent_type = "Spaces"
+line_endings = "Unix"
+quote_style = "AutoPreferSingle"
+indent_width = 2
+column_width = 120

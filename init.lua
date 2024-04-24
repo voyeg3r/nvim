@@ -1,35 +1,15 @@
--- ~/.config/nvim/init.lua
+-- File: ~/.config/nvim/init.lua
+-- Last Change: Sun, Apr 2024/04/14 - 16:06:01
 
-require('utils')
-require('plugins')
-require('settings')
-require('mappings')
-require('autocmd')
+-- local Utils = require("core.utils")
+-- local safeRequire = Utils.safeRequire
 
---[[
-TODO:
-Config wichkey-nvim plugin
+-- vim.loader.enable()
 
-utils - Some useful functions to squeeze blank lines,
-        reload nvim settings, reinden current file and much more
-
-plugins -  The init.lua has all plugins and the plugins folder
-           contains all plugins settings.
-
-settings - Most of 'set option' we use to have in tradicional vim but
-           written in lua
-
-mappings - Here you will customize your mappings
-
-autocmd  - All autocommands are in this file
-
-------
-NOTES:
-------
-Befor installin this settings run -> :checkhealth
-Setup: Run -> :PackerSync
-
-If by any chance your snippets are not working try installing
-some lsp-servers firts
-
---]]
+require("core.options")
+require("core.filetype")
+require("core.keymaps")
+require("core.autocommands")
+require("core.bootstrap")
+require("core.commands")
+require("core.theme")
